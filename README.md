@@ -33,6 +33,10 @@ setwd("fill/in/your/path/fieldvsgh_final/")
 
 If you downloaded from datadryad, you need to get the scripts.
 
+These are hosted at bitbucket.org:
+
+https://bitbucket.org/paultanger/scripts_tanger_etal_2014
+
 You can either use git clone (if you have git installed),
 
 or just download the files directly:
