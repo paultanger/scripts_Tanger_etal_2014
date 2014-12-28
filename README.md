@@ -55,10 +55,11 @@ unlink(thefile)
 
 If you downloaded from bitbucket, you need to get the data:
 ```r
-url = ""
+url = "https://datadryad.org/bitstream/handle/10255/dryad.7ss03/AllDataScriptsTanger2014.zip?sequence=1"
 thefile = tempfile(tmpdir=tempdir(), fileext=".zip")
 download.file(url, thefile, method="curl")
-unzip(thefile, exdir="../", overwrite=F)
+# unzip to a temp place and just copy the input directory?
+# unzip(thefile, exdir="../", overwrite=F)
 unlink(thefile)
 ```
 
