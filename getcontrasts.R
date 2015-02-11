@@ -1,5 +1,5 @@
 # All code written by Paul Tanger. Please cite appropriately.
-
+setwd("../output/")
 alldata = read.delim("AllDataForLSMeansPdiff.tsv")
 
 # disable scientific notation
