@@ -2,7 +2,7 @@ General
 -------------------------
 This directory contains project files for the following publication:
 
-(insert link to doi here)
+Tanger P, Vega-Sánchez ME, Fleming M, Tran K, Singh S, Abrahamson JB, Jahn CE, Santoro N, Naredo EB, Baraoidan M, Danku JMC, Salt DE, McNally KL, Simmons BA, Ronald PC, Leung H, Bush DR, McKay JK, Leach JE (2015) Cell wall composition and bioenergy potential of rice straw tissues are influenced by environment, tissue type, and genotype. BioEnergy Research, online in advance of print. http://dx.doi.org/10.1007/s12155-014-9573-y
 
 Comments and requests should be directed to:
 jan.leach@colostate.edu
@@ -43,23 +43,29 @@ or just download the files directly:
 ```r
 # with git clone
 setwd("../")
-system("git clone https://paultanger@bitbucket.org/paultanger/scripts_tanger_etal_2014.git fieldvsgh_final")
-setwd("../fieldvsgh_final/")
+system("git clone https://paultanger@bitbucket.org/paultanger/scripts_tanger_etal_2014.git temp")
+system("rm -r fieldvsgh_final")
+system("mv temp fieldvsgh_final")
+setwd("fieldvsgh_final/")
+# then open the new readme.md
+
 # or download directly
-url = "https://bitbucket.org/paultanger/scripts_tanger_etal_2014/get/9defaf64adda.zip"
+url = "https://bitbucket.org/paultanger/scripts_tanger_etal_2014/get/9553a8fa314c.zip"
 thefile = tempfile(tmpdir=tempdir(), fileext=".zip")
 download.file(url, thefile, method="curl")
-unzip(thefile, exdir="../fieldvsgh_final", overwrite=F)
+unzip(thefile, junkpaths=T, exdir="../fieldvsgh_final", overwrite=T)
 unlink(thefile)
 ```
 
 If you downloaded from bitbucket, you need to get the data:
 ```r
-url = ""
+url = "http://datadryad.org/bitstream/handle/10255/dryad.77419/AllDataTanger2014.zip?sequence=1"
 thefile = tempfile(tmpdir=tempdir(), fileext=".zip")
 download.file(url, thefile, method="curl")
-unzip(thefile, exdir="../", overwrite=F)
+unzip(thefile, junkpaths=T, exdir="../input", overwrite=F)
 unlink(thefile)
+# and create output directory
+system("mkdir ../output/")
 ```
 
 The following packages are required:
